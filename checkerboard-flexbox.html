@@ -3,13 +3,17 @@
     <head>
         <title>Checkerboard with Flexbox</title>
         <style>
+            h1,.buttons{
+                text-align: center;
+            }
+            
             .beige {
                 background-color: beige;
             }
             .red {
                 background-color: red;
             }
-            .box{
+            .square{
                 height: 100px;
                 width: 100px;
             }
@@ -20,97 +24,148 @@
             .row-reverse {
                 display:flex;
                 flex-direction: row-reverse;
+                justify-content: flex-end;
             }
-            .checkerboard {
+            #checkerboard {
                 width: 800px;
                 background-color: black;
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
+        <script type='text/javascript'>
+            function hideOrShowButton() {
+            var checkerboard = document.getElementById('checkerboard');
+            var checkerButton = document.getElementById ('checkerbutton');
+            if (checkerboard.style.display == 'none'){
+                checkerboard.style.display = 'block';
+                checkerButton.value = 'Hide Board';
+            } else {
+                checkerboard.style.display = 'none';
+                checkerButton.value = 'Show Board';
+            }
+            }
+            function hideOrShowRed() {
+            var redSquares = document.getElementsByClassName('red');
+            var redButton = document.getElementById ('redButton');
+            for(var i = 0;i < redSquares.length;i++) {
+             if (redSquares[i].style.display == 'none'){
+                redSquares[i].style.display = 'block';
+                redButton.value = 'Hide Red Squares';
+            } else {
+                redSquares[i].style.display = 'none';
+                redButton.value = 'Show Red Squares';
+            }   
+            }
+            }
+            function hideOrShowBeige() {
+            var beigeSquares = document.getElementsByClassName('beige');
+            var beigeButton = document.getElementById ('beigeButton');
+            for(var i = 0;i < beigeSquares.length;i++) {
+             if (beigeSquares[i].style.display == 'none'){
+                beigeSquares[i].style.display = 'block';
+                beigeButton.value = 'Hide Beige Squares';
+            } else {
+                beigeSquares[i].style.display = 'none';
+                beigeButton.value = 'Show Beige Squares';
+            }   
+            }
+            }
+        </script>
     </head>
     <body>
         <h1>Flexbox Chessboard</h1>
-        <div class='checkerboard'>
+        <div class='buttons'>
+            <input id='checkerbutton' type='button' value='Hide Board' onclick='hideOrShowButton()'/>
+            <input id='redButton' type='button' value='Hide Red Squares' onclick='hideOrShowRed()'/>
+            <input id='beigeButton' type='button' value='Hide Beige Squares' onclick='hideOrShowBeige()'/>
+            <a href='index.html'><button>Return to Home</button></a> 
+        </div>
+        <br>
+        <div id='checkerboard' class=''>
             <div class='row'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row-reverse'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row-reverse'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row-reverse'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
             <div class='row-reverse'>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
-                <div class='beige box'></div>
-                <div class='red box'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
+                <div class='beige square'></div>
+                <div class='red square'></div>
             </div>
-        </>
+        <div/>
+    
+
         
             
         
